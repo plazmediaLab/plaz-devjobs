@@ -1,0 +1,19 @@
+// Variables
+@import 'style';
+
+// Tailwind CSS
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.bg-points{
+  background-image: radial-gradient( rgba(0, 153, 255,.2) 1px, #fdfdfd 1px);
+  background-position: 0 0, 10px 10px;
+  background-size: 30px 30px;
+  padding: 0;
+  margin: 0; 
+}
+*{
+  outline-width: 0;
+  outline: none;
+}
