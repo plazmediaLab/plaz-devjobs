@@ -22,15 +22,12 @@
 <body class="bg-background bg-points">
 
     <nav class="bg-carbon-700 text-white">
-        <div class="container mx-auto flex justify-between items-center py-2">
-            <a class="navbar-brand" href="{{ url('/') }}">
+        <div class="container mx-auto flex justify-between items-center py-2 pl-4 md:pl-0">
+            <a href="{{ url('/') }}" class="font-medium text-lg logo-text">
                 {{ config('app.name', 'Laravel') }}
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <ul class="grid grid-flow-col grid-cols-3 m-0">
+            <ul class="flex items-center">
                 <!-- Authentication Links -->
                 @guest
                     <li>
@@ -42,7 +39,7 @@
                         </li>
                     @endif
                 @else
-                    <li class="nav-item dropdown">
+                    <li>
                         <a id="navbarDropdown" class="inline-block py-2 px-4 hover:bg-carbon-600 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
@@ -65,7 +62,7 @@
         </div>
     </nav>
 
-    <main class="py-4">
+    <main class="py-4 text-sm">
         @yield('content')
     </main>
 

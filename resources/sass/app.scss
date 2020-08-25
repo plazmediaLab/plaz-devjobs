@@ -7,7 +7,7 @@
 @import "tailwindcss/utilities";
 
 .bg-points{
-  background-image: radial-gradient( rgba(0, 153, 255,.2) 1px, #fdfdfd 1px);
+  background-image: radial-gradient( rgba(0, 153, 255,.3) 1px, #ECF0F3 1px);
   background-position: 0 0, 10px 10px;
   background-size: 30px 30px;
   padding: 0;
@@ -16,4 +16,32 @@
 *{
   outline-width: 0;
   outline: none;
+}
+
+// .logo-text{
+//   background: -webkit-linear-gradient(to right, #3494e6, #ec6ead); /* Chrome 10-25, Safari 5.1-6 */
+//   background: linear-gradient(to right, #3494e6, #ec6ead); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+// }
+.card-form{
+  @apply rounded-container shadow-card_form bg-white flex flex-col items-center justify-center overflow-hidden
+}
+.card-title{
+  @apply text-2xl font-medium text-carbon-500 p-3 text-center w-full
+}
+.card-body{
+  @apply px-5 pb-5 w-full
+}
+.label-form{
+  @apply text-label uppercase inline-block text-gray-500 mb-1
+}
+.input-form{
+  @apply py-2 px-3 w-full rounded border border-gray-300 
+}
+.input-form:focus{
+  @apply outline-none shadow-outline 
+}
+.link-form{
+  @apply block text-xs text-p_blue-500 mt-5
 }
