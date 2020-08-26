@@ -10,7 +10,7 @@
         </div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('login') }}" class="w-full">
+            <form method="POST" action="{{ route('login') }}" class="w-full" novalidate>
                 @csrf
 
                 <div class="mb-3">
@@ -20,22 +20,20 @@
                     >
                         {{ __('E-Mail Address') }}
                     </label>
+                    <input 
+                        id="email"
+                        type="email" 
+                        class="input-form @error('email') input-invalid @enderror" 
+                        name="email" value="{{ old('email') }}" 
+                        autocomplete="email" autofocus
+                    >
 
-                    <div class="">
-                        <input 
-                            id="email"
-                            type="email" 
-                            class="input-form @error('email') is-invalid @enderror" 
-                            name="email" value="{{ old('email') }}" 
-                            required autocomplete="email" autofocus
-                        >
-
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+                    @error('email')
+                        <span class="novalid-input" role="alert">
+                            <svg viewBox="0 0 20 20" fill="currentColor" class="information-circle w-4 h-4 inline-block"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
@@ -45,22 +43,20 @@
                     >
                         {{ __('Password') }}
                     </label>
+                    <input 
+                        id="password"
+                        type="password" 
+                        class="input-form @error('password') input-invalid @enderror" 
+                        name="password" 
+                        autocomplete="current-password"
+                    >
 
-                    <div class="col-md-6">
-                        <input 
-                            id="password"
-                            type="password" 
-                            class="input-form @error('password') is-invalid @enderror" 
-                            name="password" 
-                            required autocomplete="current-password"
-                        >
-
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+                    @error('password')
+                        <span class="novalid-input" role="alert">
+                            <svg viewBox="0 0 20 20" fill="currentColor" class="information-circle w-4 h-4 inline-block"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
@@ -75,7 +71,7 @@
                 </div>
 
                 <div>
-                    <button type="submit" class="shadow-blue tracking-widest block p-3 uppercase text-center text-white bg-p_blue-500 text-xs w-full rounded">
+                    <button type="submit" class="button-form text-white bg-p_blue-500 shadow-blue">
                         {{ __('Login') }}
                     </button>
 
@@ -85,7 +81,7 @@
                         </a>
                     @endif
                 </div>
-                
+
             </form>
         </div>
     </div>

@@ -25301,6 +25301,30 @@ video {
   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 
+.input-invalid {
+  --border-opacity: 1;
+  border-color: #fc8181;
+  border-color: rgba(252, 129, 129, var(--border-opacity));
+}
+
+.input-invalid:focus {
+  box-shadow: none;
+}
+
+.button-form {
+  letter-spacing: 0.1em;
+  display: block;
+  padding: 0.75rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.75rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  border-color: transparent;
+  font-weight: 500;
+}
+
 .link-form {
   display: block;
   font-size: 0.75rem;
@@ -25308,6 +25332,32 @@ video {
   color: #5480DE;
   color: rgba(84, 128, 222, var(--text-opacity));
   margin-top: 1.25rem;
+}
+
+.novalid-input {
+  padding: 0.5rem;
+  text-align: center;
+  border-left-width: 2px;
+  --border-opacity: 1;
+  border-color: #fc8181;
+  border-color: rgba(252, 129, 129, var(--border-opacity));
+  --text-opacity: 1;
+  color: #f56565;
+  color: rgba(245, 101, 101, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #fff5f5;
+  background-color: rgba(255, 245, 245, var(--bg-opacity));
+  font-weight: 300;
+  display: block;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.gradient-title {
+  background: linear-gradient(to left, #ffc400, #db36a4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (min-width: 640px){

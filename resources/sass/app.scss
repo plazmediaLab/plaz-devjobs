@@ -42,6 +42,24 @@
 .input-form:focus{
   @apply outline-none shadow-outline 
 }
+.input-invalid{
+  @apply border-red-400
+}
+.input-invalid:focus{
+  @apply shadow-none
+}
+.button-form{
+  @apply tracking-widest block p-3 uppercase text-center text-xs w-full rounded border border-transparent font-medium
+}
 .link-form{
   @apply block text-xs text-p_blue-500 mt-5
+}
+.novalid-input{
+  @apply p-2 text-center border-l-2 border-red-400 text-red-500 bg-red-100 font-light block my-1 text-xs
+}
+.gradient-title{
+  background: -webkit-linear-gradient(to left, #ffc400, #db36a4); 
+  background: linear-gradient(to left, #ffc400, #db36a4); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
