@@ -71,7 +71,7 @@
                 </div>
 
                 <div>
-                    <button type="submit" class="button-form text-white bg-p_blue-500 shadow-blue">
+                    <button type="submit" class="button-form text-white bg-p_blue-500 shadow-blue hover:bg-p_blue-400">
                         {{ __('Login') }}
                     </button>
 

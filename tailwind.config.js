@@ -7,6 +7,7 @@ module.exports = {
         card_form: '0px 2px 3px -1px rgba(0,0,0,0.19), 0px 4px 10px -1px rgba(0,0,0,0.02)'
       },
       borderRadius: {
+        extra: '1.5rem',
         container: '10px',
         card: '5px',
       },

@@ -13,9 +13,11 @@
   padding: 0;
   margin: 0; 
 }
-*{
-  outline-width: 0;
-  outline: none;
+*,
+*:focus,
+*:active{
+  outline-width: 0!important;
+  outline: none!important;
 }
 
 // .logo-text{
@@ -24,6 +26,24 @@
 //   -webkit-background-clip: text;
 //   -webkit-text-fill-color: transparent;
 // }
+.logo-text::after{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  right: -5%;
+  height: .08rem;
+  width: 65%;
+  background-image: linear-gradient(to right top, #5480DE, #C67CD8, #FF7EB6, #FF9A89, #FFC869, #F9F871);
+}
+.bg-gradien{
+  background-image: linear-gradient(to right top, #5480DE, #C67CD8, #FF7EB6, #FF9A89, #FFC869, #F9F871)!important;
+}
+.container.bg-blur{
+  background-color: rgba(255,255,255,.3);
+}
+.bg-blur{
+  backdrop-filter: blur(1px);
+}
 .card-form{
   @apply rounded-container shadow-card_form bg-white flex flex-col items-center justify-center overflow-hidden
 }
@@ -49,7 +69,7 @@
   @apply shadow-none
 }
 .button-form{
-  @apply tracking-widest block p-3 uppercase text-center text-xs w-full rounded border border-transparent font-medium
+  @apply tracking-widest block p-3 uppercase text-center text-xs w-full rounded border border-transparent font-medium transition duration-200
 }
 .link-form{
   @apply block text-xs text-p_blue-500 mt-5
@@ -58,8 +78,8 @@
   @apply p-2 text-center border-l-2 border-red-400 text-red-500 bg-red-100 font-light block my-1 text-xs
 }
 .gradient-title{
-  background: -webkit-linear-gradient(to left, #ffc400, #db36a4); 
-  background: linear-gradient(to left, #ffc400, #db36a4); 
+  background: -webkit-linear-gradient(to right, #5480DE, #C67CD8, #FF7EB6, #FF9A89, #FFC869, #F9F871); 
+  background: linear-gradient(to right, #5480DE, #C67CD8, #FF7EB6, #FF9A89, #FFC869, #F9F871); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
