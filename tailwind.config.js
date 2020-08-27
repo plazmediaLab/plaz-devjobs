@@ -42,6 +42,7 @@ module.exports = {
           800: "#1D1F20",
           900: "#0F0F10",
         },
+        
         background: "#ECF0F3",
       },
     },

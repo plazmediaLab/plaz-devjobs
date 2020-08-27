@@ -25401,7 +25401,7 @@ video {
   margin-top: 1.25rem;
 }
 
-.novalid-input {
+.error-message {
   padding: 0.5rem;
   text-align: center;
   border-left-width: 2px;
@@ -25419,6 +25419,24 @@ video {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 0.75rem;
+}
+
+.success-message {
+  --text-opacity: 1;
+  color: #48bb78;
+  color: rgba(72, 187, 120, var(--text-opacity));
+  text-align: center;
+  --bg-opacity: 1;
+  background-color: #f0fff4;
+  background-color: rgba(240, 255, 244, var(--bg-opacity));
+  padding: 0.5rem;
+  font-weight: 300;
+  font-size: 0.875rem;
+  border-left-width: 2px;
+  --border-opacity: 1;
+  border-color: #48bb78;
+  border-color: rgba(72, 187, 120, var(--border-opacity));
+  display: block;
 }
 
 .gradient-title {
