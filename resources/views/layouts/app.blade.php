@@ -67,6 +67,12 @@
         </div>
     </nav>
 
+    <div class="bg-p_blue-500">
+        <nav class="container mx-auto flex space-x-1">
+            @yield('navegation')
+        </nav>
+    </div>
+
     <main class="py-4 text-sm">
         @yield('content')
     </main>

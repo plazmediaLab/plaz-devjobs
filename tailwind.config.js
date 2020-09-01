@@ -4,7 +4,8 @@ module.exports = {
     extend: {
       boxShadow: {
         blue: '0px 41.7776px 33.4221px rgba(84, 128, 222, 0.0086), 0px 22.3363px 250px rgba(84, 128, 222, 0.106), 0px 12.5216px 10.0172px rgba(84, 128, 222, 0.125), 0px 6.6501px 5.32008px rgba(84, 128, 222, 0.15), 0px 2.76726px 2.21381px rgba(84, 128, 222, 0.21)',
-        card_form: '0px 2px 3px -1px rgba(0,0,0,0.19), 0px 4px 10px -1px rgba(0,0,0,0.02)'
+        card_form: '0px 2px 3px -1px rgba(0,0,0,0.19), 0px 4px 10px -1px rgba(0,0,0,0.02)',
+        card_white: '0px 20px 20px 5px rgba(0,0,0,0.07), 0px 1px 7px 1px rgba(0,0,0,0.05), 0px 2px 3px -1px rgba(0,0,0,0.05)',
       },
       borderRadius: {
         extra: '1.5rem',
