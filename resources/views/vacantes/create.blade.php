@@ -1,5 +1,9 @@
 @extends ('layouts.app')
 
+@section('styles')
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.23.3/css/medium-editor.min.css" integrity="sha512-zYqhQjtcNMt8/h4RJallhYRev/et7+k/HDyry20li5fWSJYSExP9O07Ung28MUuXDneIFg0f2/U3HJZWsTNAiw==" crossorigin="anonymous" />
+@endsection
+
 @section('navegation')
 
   @include('ui.vacanteadmin')
@@ -109,6 +113,17 @@
       </select>
     </div>
 
+    <div class="mb-5">
+      <label 
+        for="password"
+        class="label-form"
+      >
+          Descripción: 
+      </label>
+
+      <div class="editable border input-form"></div>
+    </div>
+
     <button 
       type="submit"
       class="button-form text-white bg-carbon-700 hover:bg-carbon-600"
@@ -117,4 +132,39 @@
     </button>
   </form>
 
+  
+@endsection
+
+@section('scripts')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.23.3/js/medium-editor.min.js" integrity="sha512-5D/0tAVbq1D3ZAzbxOnvpLt7Jl/n8m/YGASscHTNYsBvTcJnrYNiDIJm6We0RPJCpFJWowOPNz9ZJx7Ei+yFiA==" crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const editor = new MediumEditor('.editable', {
+        toolbar:{
+          buttons: [
+            'bold',
+            'bold',
+            'italic',
+            'underline',
+            'h2',
+            'h3',
+            'strikethrough',
+            'image',
+            'quote',
+            'orderedlist',
+            'unorderedlist',
+            'indent', 
+            'outdent', 
+            'justifyLeft',
+            'justifyCenter',
+            'justifyRight',
+            'justifyFull',
+          ],
+          static: true,
+          stric: true,
+        }
+      });
+    });
+  </script>
 @endsection
