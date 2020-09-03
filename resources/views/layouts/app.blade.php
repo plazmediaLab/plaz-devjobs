@@ -69,7 +69,7 @@
         </div>
     </nav>
 
-    <div class="bg-p_blue-500">
+    <div class="bg-gradient-to-r from-purple_grad-500 to-orange_grad-500">
         <nav class="container mx-auto flex space-x-1">
             @yield('navegation')
         </nav>

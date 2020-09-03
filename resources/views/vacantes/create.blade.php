@@ -16,7 +16,7 @@
 
   <form 
     action=""
-    class="max-w-lg mx-auto my-10 shadow-card_white p-4 text-carbon-500"
+    class="max-w-lg mx-auto my-10 shadow-card_white p-4 text-carbon-500 placeholder-gray-500"
   >
     <div class="mb-5">
       <label 
@@ -122,6 +122,9 @@
       </label>
 
       <div class="editable border input-form"></div>
+
+      <input type="hidden" name="descripcion" id="descripcion">
+
     </div>
 
     <button 
@@ -163,8 +166,18 @@
           ],
           static: true,
           stric: true,
+        },
+        placeholder:{
+          text: 'Agregá una descripción a la vacante',
+          hideOnClick: false
         }
       });
+
+      editor.subscribe('editableInput', (eventObj, editable) => {
+        const contenido = editor.getContent();
+        document.querySelector('#descripcion').value = contenido;
+      });
+
     });
   </script>
 @endsection
