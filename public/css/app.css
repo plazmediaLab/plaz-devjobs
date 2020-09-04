@@ -2026,6 +2026,12 @@ video {
   border-color: rgba(236, 240, 243, var(--divide-opacity));
 }
 
+.divide-reddit > :not(template) ~ :not(template){
+  --divide-opacity: 1;
+  border-color: #ff4500;
+  border-color: rgba(255, 69, 0, var(--divide-opacity));
+}
+
 .divide-solid > :not(template) ~ :not(template){
   border-style: solid;
 }
@@ -2941,6 +2947,12 @@ video {
   background-color: rgba(236, 240, 243, var(--bg-opacity));
 }
 
+.bg-reddit{
+  --bg-opacity: 1;
+  background-color: #ff4500;
+  background-color: rgba(255, 69, 0, var(--bg-opacity));
+}
+
 .hover\:bg-transparent:hover{
   background-color: transparent;
 }
@@ -3733,6 +3745,12 @@ video {
   --bg-opacity: 1;
   background-color: #ECF0F3;
   background-color: rgba(236, 240, 243, var(--bg-opacity));
+}
+
+.hover\:bg-reddit:hover{
+  --bg-opacity: 1;
+  background-color: #ff4500;
+  background-color: rgba(255, 69, 0, var(--bg-opacity));
 }
 
 .focus\:bg-transparent:focus{
@@ -4529,6 +4547,12 @@ video {
   background-color: rgba(236, 240, 243, var(--bg-opacity));
 }
 
+.focus\:bg-reddit:focus{
+  --bg-opacity: 1;
+  background-color: #ff4500;
+  background-color: rgba(255, 69, 0, var(--bg-opacity));
+}
+
 .bg-none{
   background-image: none;
 }
@@ -5230,6 +5254,11 @@ video {
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
 }
 
+.from-reddit{
+  --gradient-from-color: #ff4500;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+}
+
 .via-transparent{
   --gradient-via-color: transparent;
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -5895,6 +5924,11 @@ video {
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
 }
 
+.via-reddit{
+  --gradient-via-color: #ff4500;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+}
+
 .to-transparent{
   --gradient-to-color: transparent;
 }
@@ -6425,6 +6459,10 @@ video {
 
 .to-background{
   --gradient-to-color: #ECF0F3;
+}
+
+.to-reddit{
+  --gradient-to-color: #ff4500;
 }
 
 .hover\:from-transparent:hover{
@@ -7092,6 +7130,11 @@ video {
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
 }
 
+.hover\:from-reddit:hover{
+  --gradient-from-color: #ff4500;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+}
+
 .hover\:via-transparent:hover{
   --gradient-via-color: transparent;
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -7757,6 +7800,11 @@ video {
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
 }
 
+.hover\:via-reddit:hover{
+  --gradient-via-color: #ff4500;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+}
+
 .hover\:to-transparent:hover{
   --gradient-to-color: transparent;
 }
@@ -8287,6 +8335,10 @@ video {
 
 .hover\:to-background:hover{
   --gradient-to-color: #ECF0F3;
+}
+
+.hover\:to-reddit:hover{
+  --gradient-to-color: #ff4500;
 }
 
 .focus\:from-transparent:focus{
@@ -8954,6 +9006,11 @@ video {
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
 }
 
+.focus\:from-reddit:focus{
+  --gradient-from-color: #ff4500;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+}
+
 .focus\:via-transparent:focus{
   --gradient-via-color: transparent;
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -9619,6 +9676,11 @@ video {
   --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
 }
 
+.focus\:via-reddit:focus{
+  --gradient-via-color: #ff4500;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+}
+
 .focus\:to-transparent:focus{
   --gradient-to-color: transparent;
 }
@@ -10149,6 +10211,10 @@ video {
 
 .focus\:to-background:focus{
   --gradient-to-color: #ECF0F3;
+}
+
+.focus\:to-reddit:focus{
+  --gradient-to-color: #ff4500;
 }
 
 .bg-opacity-0{
@@ -11085,6 +11151,12 @@ video {
   border-color: rgba(236, 240, 243, var(--border-opacity));
 }
 
+.border-reddit{
+  --border-opacity: 1;
+  border-color: #ff4500;
+  border-color: rgba(255, 69, 0, var(--border-opacity));
+}
+
 .hover\:border-transparent:hover{
   border-color: transparent;
 }
@@ -11879,6 +11951,12 @@ video {
   border-color: rgba(236, 240, 243, var(--border-opacity));
 }
 
+.hover\:border-reddit:hover{
+  --border-opacity: 1;
+  border-color: #ff4500;
+  border-color: rgba(255, 69, 0, var(--border-opacity));
+}
+
 .focus\:border-transparent:focus{
   border-color: transparent;
 }
@@ -12671,6 +12749,12 @@ video {
   --border-opacity: 1;
   border-color: #ECF0F3;
   border-color: rgba(236, 240, 243, var(--border-opacity));
+}
+
+.focus\:border-reddit:focus{
+  --border-opacity: 1;
+  border-color: #ff4500;
+  border-color: rgba(255, 69, 0, var(--border-opacity));
 }
 
 .border-opacity-0{
@@ -19122,6 +19206,30 @@ video {
   color: rgba(236, 240, 243, var(--placeholder-opacity));
 }
 
+.placeholder-reddit::-moz-placeholder{
+  --placeholder-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--placeholder-opacity));
+}
+
+.placeholder-reddit:-ms-input-placeholder{
+  --placeholder-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--placeholder-opacity));
+}
+
+.placeholder-reddit::-ms-input-placeholder{
+  --placeholder-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--placeholder-opacity));
+}
+
+.placeholder-reddit::placeholder{
+  --placeholder-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--placeholder-opacity));
+}
+
 .focus\:placeholder-transparent:focus::-moz-placeholder{
   color: transparent;
 }
@@ -22298,6 +22406,30 @@ video {
   color: rgba(236, 240, 243, var(--placeholder-opacity));
 }
 
+.focus\:placeholder-reddit:focus::-moz-placeholder{
+  --placeholder-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--placeholder-opacity));
+}
+
+.focus\:placeholder-reddit:focus:-ms-input-placeholder{
+  --placeholder-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--placeholder-opacity));
+}
+
+.focus\:placeholder-reddit:focus::-ms-input-placeholder{
+  --placeholder-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--placeholder-opacity));
+}
+
+.focus\:placeholder-reddit:focus::placeholder{
+  --placeholder-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--placeholder-opacity));
+}
+
 .placeholder-opacity-0::-moz-placeholder{
   --placeholder-opacity: 0;
 }
@@ -23563,6 +23695,12 @@ video {
   color: rgba(236, 240, 243, var(--text-opacity));
 }
 
+.text-reddit{
+  --text-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--text-opacity));
+}
+
 .hover\:text-transparent:hover{
   color: transparent;
 }
@@ -24357,6 +24495,12 @@ video {
   color: rgba(236, 240, 243, var(--text-opacity));
 }
 
+.hover\:text-reddit:hover{
+  --text-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--text-opacity));
+}
+
 .focus\:text-transparent:focus{
   color: transparent;
 }
@@ -25149,6 +25293,12 @@ video {
   --text-opacity: 1;
   color: #ECF0F3;
   color: rgba(236, 240, 243, var(--text-opacity));
+}
+
+.focus\:text-reddit:focus{
+  --text-opacity: 1;
+  color: #ff4500;
+  color: rgba(255, 69, 0, var(--text-opacity));
 }
 
 .text-opacity-0{
@@ -28541,6 +28691,33 @@ video {
   -webkit-text-fill-color: transparent;
 }
 
+.pulse-effect {
+  -webkit-animation: pulse 2s linear infinite;
+          animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 orangered;
+  }
+
+  40% {
+    box-shadow: 0 0 0 0 orangered, 0 0 0 0 rgba(255, 69, 0, 0);
+  }
+
+  60% {
+    box-shadow: 0 0 0 1rem rgba(255, 69, 0, 0.7), 0 0 0 0rgba 255, 69, 0, 0;
+  }
+
+  80% {
+    box-shadow: 0 0 0 1rem rgba(255, 69, 0, 0), 0 0 0 0.7rem rgba(255, 69, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0), 0 0 0 0.7rem rgba(255, 69, 0, 0);
+  }
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
@@ -29884,6 +30061,12 @@ video {
     border-color: rgba(236, 240, 243, var(--divide-opacity));
   }
 
+  .sm\:divide-reddit > :not(template) ~ :not(template){
+    --divide-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--divide-opacity));
+  }
+
   .sm\:divide-solid > :not(template) ~ :not(template){
     border-style: solid;
   }
@@ -30799,6 +30982,12 @@ video {
     background-color: rgba(236, 240, 243, var(--bg-opacity));
   }
 
+  .sm\:bg-reddit{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
+  }
+
   .sm\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -31591,6 +31780,12 @@ video {
     --bg-opacity: 1;
     background-color: #ECF0F3;
     background-color: rgba(236, 240, 243, var(--bg-opacity));
+  }
+
+  .sm\:hover\:bg-reddit:hover{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
   }
 
   .sm\:focus\:bg-transparent:focus{
@@ -32387,6 +32582,12 @@ video {
     background-color: rgba(236, 240, 243, var(--bg-opacity));
   }
 
+  .sm\:focus\:bg-reddit:focus{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
+  }
+
   .sm\:bg-none{
     background-image: none;
   }
@@ -33088,6 +33289,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .sm\:from-reddit{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .sm\:via-transparent{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -33753,6 +33959,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .sm\:via-reddit{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .sm\:to-transparent{
     --gradient-to-color: transparent;
   }
@@ -34283,6 +34494,10 @@ video {
 
   .sm\:to-background{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .sm\:to-reddit{
+    --gradient-to-color: #ff4500;
   }
 
   .sm\:hover\:from-transparent:hover{
@@ -34950,6 +35165,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .sm\:hover\:from-reddit:hover{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .sm\:hover\:via-transparent:hover{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -35615,6 +35835,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .sm\:hover\:via-reddit:hover{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .sm\:hover\:to-transparent:hover{
     --gradient-to-color: transparent;
   }
@@ -36145,6 +36370,10 @@ video {
 
   .sm\:hover\:to-background:hover{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .sm\:hover\:to-reddit:hover{
+    --gradient-to-color: #ff4500;
   }
 
   .sm\:focus\:from-transparent:focus{
@@ -36812,6 +37041,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .sm\:focus\:from-reddit:focus{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .sm\:focus\:via-transparent:focus{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -37477,6 +37711,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .sm\:focus\:via-reddit:focus{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .sm\:focus\:to-transparent:focus{
     --gradient-to-color: transparent;
   }
@@ -38007,6 +38246,10 @@ video {
 
   .sm\:focus\:to-background:focus{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .sm\:focus\:to-reddit:focus{
+    --gradient-to-color: #ff4500;
   }
 
   .sm\:bg-opacity-0{
@@ -38943,6 +39186,12 @@ video {
     border-color: rgba(236, 240, 243, var(--border-opacity));
   }
 
+  .sm\:border-reddit{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
+  }
+
   .sm\:hover\:border-transparent:hover{
     border-color: transparent;
   }
@@ -39737,6 +39986,12 @@ video {
     border-color: rgba(236, 240, 243, var(--border-opacity));
   }
 
+  .sm\:hover\:border-reddit:hover{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
+  }
+
   .sm\:focus\:border-transparent:focus{
     border-color: transparent;
   }
@@ -40529,6 +40784,12 @@ video {
     --border-opacity: 1;
     border-color: #ECF0F3;
     border-color: rgba(236, 240, 243, var(--border-opacity));
+  }
+
+  .sm\:focus\:border-reddit:focus{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
   }
 
   .sm\:border-opacity-0{
@@ -46980,6 +47241,30 @@ video {
     color: rgba(236, 240, 243, var(--placeholder-opacity));
   }
 
+  .sm\:placeholder-reddit::-moz-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .sm\:placeholder-reddit:-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .sm\:placeholder-reddit::-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .sm\:placeholder-reddit::placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
   .sm\:focus\:placeholder-transparent:focus::-moz-placeholder{
     color: transparent;
   }
@@ -50156,6 +50441,30 @@ video {
     color: rgba(236, 240, 243, var(--placeholder-opacity));
   }
 
+  .sm\:focus\:placeholder-reddit:focus::-moz-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .sm\:focus\:placeholder-reddit:focus:-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .sm\:focus\:placeholder-reddit:focus::-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .sm\:focus\:placeholder-reddit:focus::placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
   .sm\:placeholder-opacity-0::-moz-placeholder{
     --placeholder-opacity: 0;
   }
@@ -51421,6 +51730,12 @@ video {
     color: rgba(236, 240, 243, var(--text-opacity));
   }
 
+  .sm\:text-reddit{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
+  }
+
   .sm\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -52215,6 +52530,12 @@ video {
     color: rgba(236, 240, 243, var(--text-opacity));
   }
 
+  .sm\:hover\:text-reddit:hover{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
+  }
+
   .sm\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -53007,6 +53328,12 @@ video {
     --text-opacity: 1;
     color: #ECF0F3;
     color: rgba(236, 240, 243, var(--text-opacity));
+  }
+
+  .sm\:focus\:text-reddit:focus{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
   }
 
   .sm\:text-opacity-0{
@@ -57501,6 +57828,12 @@ video {
     border-color: rgba(236, 240, 243, var(--divide-opacity));
   }
 
+  .md\:divide-reddit > :not(template) ~ :not(template){
+    --divide-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--divide-opacity));
+  }
+
   .md\:divide-solid > :not(template) ~ :not(template){
     border-style: solid;
   }
@@ -58416,6 +58749,12 @@ video {
     background-color: rgba(236, 240, 243, var(--bg-opacity));
   }
 
+  .md\:bg-reddit{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
+  }
+
   .md\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -59208,6 +59547,12 @@ video {
     --bg-opacity: 1;
     background-color: #ECF0F3;
     background-color: rgba(236, 240, 243, var(--bg-opacity));
+  }
+
+  .md\:hover\:bg-reddit:hover{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
   }
 
   .md\:focus\:bg-transparent:focus{
@@ -60004,6 +60349,12 @@ video {
     background-color: rgba(236, 240, 243, var(--bg-opacity));
   }
 
+  .md\:focus\:bg-reddit:focus{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
+  }
+
   .md\:bg-none{
     background-image: none;
   }
@@ -60705,6 +61056,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .md\:from-reddit{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .md\:via-transparent{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -61370,6 +61726,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .md\:via-reddit{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .md\:to-transparent{
     --gradient-to-color: transparent;
   }
@@ -61900,6 +62261,10 @@ video {
 
   .md\:to-background{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .md\:to-reddit{
+    --gradient-to-color: #ff4500;
   }
 
   .md\:hover\:from-transparent:hover{
@@ -62567,6 +62932,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .md\:hover\:from-reddit:hover{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .md\:hover\:via-transparent:hover{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -63232,6 +63602,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .md\:hover\:via-reddit:hover{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .md\:hover\:to-transparent:hover{
     --gradient-to-color: transparent;
   }
@@ -63762,6 +64137,10 @@ video {
 
   .md\:hover\:to-background:hover{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .md\:hover\:to-reddit:hover{
+    --gradient-to-color: #ff4500;
   }
 
   .md\:focus\:from-transparent:focus{
@@ -64429,6 +64808,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .md\:focus\:from-reddit:focus{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .md\:focus\:via-transparent:focus{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -65094,6 +65478,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .md\:focus\:via-reddit:focus{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .md\:focus\:to-transparent:focus{
     --gradient-to-color: transparent;
   }
@@ -65624,6 +66013,10 @@ video {
 
   .md\:focus\:to-background:focus{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .md\:focus\:to-reddit:focus{
+    --gradient-to-color: #ff4500;
   }
 
   .md\:bg-opacity-0{
@@ -66560,6 +66953,12 @@ video {
     border-color: rgba(236, 240, 243, var(--border-opacity));
   }
 
+  .md\:border-reddit{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
+  }
+
   .md\:hover\:border-transparent:hover{
     border-color: transparent;
   }
@@ -67354,6 +67753,12 @@ video {
     border-color: rgba(236, 240, 243, var(--border-opacity));
   }
 
+  .md\:hover\:border-reddit:hover{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
+  }
+
   .md\:focus\:border-transparent:focus{
     border-color: transparent;
   }
@@ -68146,6 +68551,12 @@ video {
     --border-opacity: 1;
     border-color: #ECF0F3;
     border-color: rgba(236, 240, 243, var(--border-opacity));
+  }
+
+  .md\:focus\:border-reddit:focus{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
   }
 
   .md\:border-opacity-0{
@@ -74597,6 +75008,30 @@ video {
     color: rgba(236, 240, 243, var(--placeholder-opacity));
   }
 
+  .md\:placeholder-reddit::-moz-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .md\:placeholder-reddit:-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .md\:placeholder-reddit::-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .md\:placeholder-reddit::placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
   .md\:focus\:placeholder-transparent:focus::-moz-placeholder{
     color: transparent;
   }
@@ -77773,6 +78208,30 @@ video {
     color: rgba(236, 240, 243, var(--placeholder-opacity));
   }
 
+  .md\:focus\:placeholder-reddit:focus::-moz-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .md\:focus\:placeholder-reddit:focus:-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .md\:focus\:placeholder-reddit:focus::-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .md\:focus\:placeholder-reddit:focus::placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
   .md\:placeholder-opacity-0::-moz-placeholder{
     --placeholder-opacity: 0;
   }
@@ -79038,6 +79497,12 @@ video {
     color: rgba(236, 240, 243, var(--text-opacity));
   }
 
+  .md\:text-reddit{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
+  }
+
   .md\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -79832,6 +80297,12 @@ video {
     color: rgba(236, 240, 243, var(--text-opacity));
   }
 
+  .md\:hover\:text-reddit:hover{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
+  }
+
   .md\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -80624,6 +81095,12 @@ video {
     --text-opacity: 1;
     color: #ECF0F3;
     color: rgba(236, 240, 243, var(--text-opacity));
+  }
+
+  .md\:focus\:text-reddit:focus{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
   }
 
   .md\:text-opacity-0{
@@ -85118,6 +85595,12 @@ video {
     border-color: rgba(236, 240, 243, var(--divide-opacity));
   }
 
+  .lg\:divide-reddit > :not(template) ~ :not(template){
+    --divide-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--divide-opacity));
+  }
+
   .lg\:divide-solid > :not(template) ~ :not(template){
     border-style: solid;
   }
@@ -86033,6 +86516,12 @@ video {
     background-color: rgba(236, 240, 243, var(--bg-opacity));
   }
 
+  .lg\:bg-reddit{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
+  }
+
   .lg\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -86825,6 +87314,12 @@ video {
     --bg-opacity: 1;
     background-color: #ECF0F3;
     background-color: rgba(236, 240, 243, var(--bg-opacity));
+  }
+
+  .lg\:hover\:bg-reddit:hover{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
   }
 
   .lg\:focus\:bg-transparent:focus{
@@ -87621,6 +88116,12 @@ video {
     background-color: rgba(236, 240, 243, var(--bg-opacity));
   }
 
+  .lg\:focus\:bg-reddit:focus{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
+  }
+
   .lg\:bg-none{
     background-image: none;
   }
@@ -88322,6 +88823,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .lg\:from-reddit{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .lg\:via-transparent{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -88987,6 +89493,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .lg\:via-reddit{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .lg\:to-transparent{
     --gradient-to-color: transparent;
   }
@@ -89517,6 +90028,10 @@ video {
 
   .lg\:to-background{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .lg\:to-reddit{
+    --gradient-to-color: #ff4500;
   }
 
   .lg\:hover\:from-transparent:hover{
@@ -90184,6 +90699,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .lg\:hover\:from-reddit:hover{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .lg\:hover\:via-transparent:hover{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -90849,6 +91369,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .lg\:hover\:via-reddit:hover{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .lg\:hover\:to-transparent:hover{
     --gradient-to-color: transparent;
   }
@@ -91379,6 +91904,10 @@ video {
 
   .lg\:hover\:to-background:hover{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .lg\:hover\:to-reddit:hover{
+    --gradient-to-color: #ff4500;
   }
 
   .lg\:focus\:from-transparent:focus{
@@ -92046,6 +92575,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .lg\:focus\:from-reddit:focus{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .lg\:focus\:via-transparent:focus{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -92711,6 +93245,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .lg\:focus\:via-reddit:focus{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .lg\:focus\:to-transparent:focus{
     --gradient-to-color: transparent;
   }
@@ -93241,6 +93780,10 @@ video {
 
   .lg\:focus\:to-background:focus{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .lg\:focus\:to-reddit:focus{
+    --gradient-to-color: #ff4500;
   }
 
   .lg\:bg-opacity-0{
@@ -94177,6 +94720,12 @@ video {
     border-color: rgba(236, 240, 243, var(--border-opacity));
   }
 
+  .lg\:border-reddit{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
+  }
+
   .lg\:hover\:border-transparent:hover{
     border-color: transparent;
   }
@@ -94971,6 +95520,12 @@ video {
     border-color: rgba(236, 240, 243, var(--border-opacity));
   }
 
+  .lg\:hover\:border-reddit:hover{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
+  }
+
   .lg\:focus\:border-transparent:focus{
     border-color: transparent;
   }
@@ -95763,6 +96318,12 @@ video {
     --border-opacity: 1;
     border-color: #ECF0F3;
     border-color: rgba(236, 240, 243, var(--border-opacity));
+  }
+
+  .lg\:focus\:border-reddit:focus{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
   }
 
   .lg\:border-opacity-0{
@@ -102214,6 +102775,30 @@ video {
     color: rgba(236, 240, 243, var(--placeholder-opacity));
   }
 
+  .lg\:placeholder-reddit::-moz-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .lg\:placeholder-reddit:-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .lg\:placeholder-reddit::-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .lg\:placeholder-reddit::placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
   .lg\:focus\:placeholder-transparent:focus::-moz-placeholder{
     color: transparent;
   }
@@ -105390,6 +105975,30 @@ video {
     color: rgba(236, 240, 243, var(--placeholder-opacity));
   }
 
+  .lg\:focus\:placeholder-reddit:focus::-moz-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .lg\:focus\:placeholder-reddit:focus:-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .lg\:focus\:placeholder-reddit:focus::-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .lg\:focus\:placeholder-reddit:focus::placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
   .lg\:placeholder-opacity-0::-moz-placeholder{
     --placeholder-opacity: 0;
   }
@@ -106655,6 +107264,12 @@ video {
     color: rgba(236, 240, 243, var(--text-opacity));
   }
 
+  .lg\:text-reddit{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
+  }
+
   .lg\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -107449,6 +108064,12 @@ video {
     color: rgba(236, 240, 243, var(--text-opacity));
   }
 
+  .lg\:hover\:text-reddit:hover{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
+  }
+
   .lg\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -108241,6 +108862,12 @@ video {
     --text-opacity: 1;
     color: #ECF0F3;
     color: rgba(236, 240, 243, var(--text-opacity));
+  }
+
+  .lg\:focus\:text-reddit:focus{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
   }
 
   .lg\:text-opacity-0{
@@ -112735,6 +113362,12 @@ video {
     border-color: rgba(236, 240, 243, var(--divide-opacity));
   }
 
+  .xl\:divide-reddit > :not(template) ~ :not(template){
+    --divide-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--divide-opacity));
+  }
+
   .xl\:divide-solid > :not(template) ~ :not(template){
     border-style: solid;
   }
@@ -113650,6 +114283,12 @@ video {
     background-color: rgba(236, 240, 243, var(--bg-opacity));
   }
 
+  .xl\:bg-reddit{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
+  }
+
   .xl\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -114442,6 +115081,12 @@ video {
     --bg-opacity: 1;
     background-color: #ECF0F3;
     background-color: rgba(236, 240, 243, var(--bg-opacity));
+  }
+
+  .xl\:hover\:bg-reddit:hover{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
   }
 
   .xl\:focus\:bg-transparent:focus{
@@ -115238,6 +115883,12 @@ video {
     background-color: rgba(236, 240, 243, var(--bg-opacity));
   }
 
+  .xl\:focus\:bg-reddit:focus{
+    --bg-opacity: 1;
+    background-color: #ff4500;
+    background-color: rgba(255, 69, 0, var(--bg-opacity));
+  }
+
   .xl\:bg-none{
     background-image: none;
   }
@@ -115939,6 +116590,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .xl\:from-reddit{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .xl\:via-transparent{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -116604,6 +117260,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .xl\:via-reddit{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .xl\:to-transparent{
     --gradient-to-color: transparent;
   }
@@ -117134,6 +117795,10 @@ video {
 
   .xl\:to-background{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .xl\:to-reddit{
+    --gradient-to-color: #ff4500;
   }
 
   .xl\:hover\:from-transparent:hover{
@@ -117801,6 +118466,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .xl\:hover\:from-reddit:hover{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .xl\:hover\:via-transparent:hover{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -118466,6 +119136,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .xl\:hover\:via-reddit:hover{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .xl\:hover\:to-transparent:hover{
     --gradient-to-color: transparent;
   }
@@ -118996,6 +119671,10 @@ video {
 
   .xl\:hover\:to-background:hover{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .xl\:hover\:to-reddit:hover{
+    --gradient-to-color: #ff4500;
   }
 
   .xl\:focus\:from-transparent:focus{
@@ -119663,6 +120342,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .xl\:focus\:from-reddit:focus{
+    --gradient-from-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .xl\:focus\:via-transparent:focus{
     --gradient-via-color: transparent;
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(0, 0, 0, 0));
@@ -120328,6 +121012,11 @@ video {
     --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(236, 240, 243, 0));
   }
 
+  .xl\:focus\:via-reddit:focus{
+    --gradient-via-color: #ff4500;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(255, 69, 0, 0));
+  }
+
   .xl\:focus\:to-transparent:focus{
     --gradient-to-color: transparent;
   }
@@ -120858,6 +121547,10 @@ video {
 
   .xl\:focus\:to-background:focus{
     --gradient-to-color: #ECF0F3;
+  }
+
+  .xl\:focus\:to-reddit:focus{
+    --gradient-to-color: #ff4500;
   }
 
   .xl\:bg-opacity-0{
@@ -121794,6 +122487,12 @@ video {
     border-color: rgba(236, 240, 243, var(--border-opacity));
   }
 
+  .xl\:border-reddit{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
+  }
+
   .xl\:hover\:border-transparent:hover{
     border-color: transparent;
   }
@@ -122588,6 +123287,12 @@ video {
     border-color: rgba(236, 240, 243, var(--border-opacity));
   }
 
+  .xl\:hover\:border-reddit:hover{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
+  }
+
   .xl\:focus\:border-transparent:focus{
     border-color: transparent;
   }
@@ -123380,6 +124085,12 @@ video {
     --border-opacity: 1;
     border-color: #ECF0F3;
     border-color: rgba(236, 240, 243, var(--border-opacity));
+  }
+
+  .xl\:focus\:border-reddit:focus{
+    --border-opacity: 1;
+    border-color: #ff4500;
+    border-color: rgba(255, 69, 0, var(--border-opacity));
   }
 
   .xl\:border-opacity-0{
@@ -129831,6 +130542,30 @@ video {
     color: rgba(236, 240, 243, var(--placeholder-opacity));
   }
 
+  .xl\:placeholder-reddit::-moz-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .xl\:placeholder-reddit:-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .xl\:placeholder-reddit::-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .xl\:placeholder-reddit::placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
   .xl\:focus\:placeholder-transparent:focus::-moz-placeholder{
     color: transparent;
   }
@@ -133007,6 +133742,30 @@ video {
     color: rgba(236, 240, 243, var(--placeholder-opacity));
   }
 
+  .xl\:focus\:placeholder-reddit:focus::-moz-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .xl\:focus\:placeholder-reddit:focus:-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .xl\:focus\:placeholder-reddit:focus::-ms-input-placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
+  .xl\:focus\:placeholder-reddit:focus::placeholder{
+    --placeholder-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--placeholder-opacity));
+  }
+
   .xl\:placeholder-opacity-0::-moz-placeholder{
     --placeholder-opacity: 0;
   }
@@ -134272,6 +135031,12 @@ video {
     color: rgba(236, 240, 243, var(--text-opacity));
   }
 
+  .xl\:text-reddit{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
+  }
+
   .xl\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -135066,6 +135831,12 @@ video {
     color: rgba(236, 240, 243, var(--text-opacity));
   }
 
+  .xl\:hover\:text-reddit:hover{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
+  }
+
   .xl\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -135858,6 +136629,12 @@ video {
     --text-opacity: 1;
     color: #ECF0F3;
     color: rgba(236, 240, 243, var(--text-opacity));
+  }
+
+  .xl\:focus\:text-reddit:focus{
+    --text-opacity: 1;
+    color: #ff4500;
+    color: rgba(255, 69, 0, var(--text-opacity));
   }
 
   .xl\:text-opacity-0{

@@ -88,3 +88,34 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.pulse-effect{
+  // width: 35px;
+  // height: 35px;
+  // background-color: #ff4500;
+  // color: white;
+  // border-radius: 9999px;
+  // padding: 1.3rem;
+  animation: pulse 2s linear infinite;
+}
+@keyframes pulse{
+  0%{
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 1)
+  }
+  40%{
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 1),
+                0 0 0 0 rgba(255, 69, 0, 0);
+  }
+  60%{
+    box-shadow: 0 0 0 1rem rgba(255, 69, 0, .7),
+                0 0 0 0rgba(255, 69, 0, 0);
+  }
+  80%{
+    box-shadow: 0 0 0 1rem rgba(255, 69, 0, 0),
+                0 0 0 .7rem rgba(255, 69, 0, 0);
+  }
+  100%{
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0),
+                0 0 0 .7rem rgba(255, 69, 0, 0);
+  }
+}

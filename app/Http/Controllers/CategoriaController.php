@@ -9,9 +9,6 @@ class CategoriaController extends Controller
 {
     public function index()
     {
-
-        $categorias = Categoria::all();
-
-        return json_encode($categorias);
+        // 
     }
 }

@@ -68,6 +68,7 @@ module.exports = {
           900: '#470B11',
         },
         background: "#ECF0F3",
+        reddit: "#ff4500",
       },
     },
   },
