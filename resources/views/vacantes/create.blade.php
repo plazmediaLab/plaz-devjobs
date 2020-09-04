@@ -79,6 +79,21 @@
         for="password"
         class="label-form"
       >
+          React section:
+      </label>
+      @php
+          $skills = ['HTML5', 'CSS3', 'CSSGrid', 'Flexbox', 'JavaScript', 'jQuery', 'Node', 'Angular', 'VueJS', 'ReactJS', 'React Hooks', 'Redux', 'Apollo', 'GraphQL', 'TypeScript', 'PHP', 'Laravel', 'Symfony', 'Python', 'Django', 'ORM', 'Sequelize', 'Mongoose', 'SQL', 'MVC', 'SASS', 'WordPress', 'Express', 'Deno', 'React Native', 'Flutter', 'MobX', 'C#', 'Ruby on Rails']
+      @endphp
+
+      <div id="example" skills={{ json_encode($skills) }}></div>
+
+    </div>
+
+    <div class="mb-5">
+      <label
+        for="password"
+        class="label-form"
+      >
           Ubicación:
       </label>
 
