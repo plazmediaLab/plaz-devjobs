@@ -17,7 +17,7 @@ class SkillController extends Controller
     // Index
     public function index()
     {
-        $skills = Skill::all();
+        $skills = Skill::orderBy('name', 'asc')->get();
 
         return json_encode($skills);
     }

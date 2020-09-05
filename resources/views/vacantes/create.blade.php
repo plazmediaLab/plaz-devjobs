@@ -149,7 +149,7 @@
         for="password"
         class="label-form"
       >
-          React section:
+        Habilidades requeridas:
       </label>
 
       <div id="example"></div>

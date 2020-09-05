@@ -48744,6 +48744,16 @@ var Skills = function Skills() {
 
             case 7:
               res = _context.sent;
+              // setSkills(res.sort(function (a, b) {
+              //   if (a.name > b.name) {
+              //     return 1;
+              //   }
+              //   if (a.name < b.name) {
+              //     return -1;
+              //   }
+              //   // a must be equal to b
+              //   return 0;
+              // }));
               setSkills(res);
               setFetching(false);
               _context.next = 16;
@@ -48771,18 +48781,18 @@ var Skills = function Skills() {
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     data();
   }, []);
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    if (skills.length > 0) {}
-  }, [skills]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, fetching ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "flex items-center justify-center flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_icon_pulse__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
     className: "text-xs text-gray-500 block mt-2"
-  }, "Cargando...")) : skills.map(function (item) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
-      key: item.id
+  }, "Cargando...")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+    className: "flex items-center justify-center flex-wrap space-x-1 space-y-1 font-medium text-gray-600 text-xs"
+  }, skills.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      key: item.id,
+      className: "py-1 px-3 rounded-full bg-gray-300"
     }, item.name);
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Skills);
