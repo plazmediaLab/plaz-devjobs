@@ -16,102 +16,159 @@
   <h1 class="text-2xl text-carbon-500 text-center">Nueva vacantes</h1>
 
   <form
-    action=""
+    action="{{ route('vacantes.store') }}"
+    method="POST"
     class="max-w-lg mx-auto my-10 shadow-card_white p-4 text-carbon-500 placeholder-gray-500"
   >
+
+    @csrf
+
     <div class="mb-5">
       <label
-        for="password"
+        for="titulo"
         class="label-form"
       >
           Titulo vacante:
       </label>
       <input
+        autofocus
         id="titulo"
         name="titulo"
         type="text"
-        class="input-form"
+        class="input-form @error('titulo') input-invalid @enderror"
+        placeholder="Escríbe el titulo de la vacante"
+        value="{{ old('titulo') }}"
       >
+      @error('titulo')
+        <p class="text-red-600 text-xs font-medium flex items-center bg-red-100 p-2">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="exclamation-circle w-4 h-4 stroke-1 inline-block mr-1"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {{ $message }}
+        </p>
+      @enderror
     </div>
 
     <div class="mb-5">
       <label
-        for="password"
+        for="categoria"
         class="label-form"
       >
           Categorías:
       </label>
 
       <select
-        name="categorias"
-        id="categorias"
-        class="input-form truncate"
+        name="categoria"
+        id="categoria"
+        class="input-form truncate @error('categoria') input-invalid @enderror"
       >
         <option selected disabled>--- Selecciona la categoría ---</option>
         @foreach ($categorias as $categoria)
-          <option value="{{ $categoria->id }}">{{$categoria->name}}</option>
+          <option
+            {{ old('categoria') == $categoria->id ? 'selected' : '' }}
+            value="{{ $categoria->id }}"
+          >
+            {{$categoria->name}}
+          </option>
         @endforeach
       </select>
+      @error('categoria')
+        <p class="text-red-600 text-xs font-medium flex items-center bg-red-100 p-2">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="exclamation-circle w-4 h-4 stroke-1 inline-block mr-1"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {{ $message }}
+        </p>
+      @enderror
     </div>
 
     <div class="mb-5">
       <label
-        for="password"
+        for="experiencia"
         class="label-form"
       >
           Experiencias:
       </label>
 
       <select
-        name="experiencias"
-        id="experiencias"
-        class="input-form truncate"
+        name="experiencia"
+        id="experiencia"
+        class="input-form truncate @error('experiencia') input-invalid @enderror"
       >
         <option selected disabled>--- Selecciona la experiencia ---</option>
         @foreach ($experiencias as $experiencia)
-          <option value="{{ $experiencia->id }}">{{$experiencia->name}}</option>
+          <option
+            {{ old('experiencia') == $experiencia->id ? 'selected' : '' }}
+            value="{{ $experiencia->id }}"
+          >
+            {{$experiencia->name}}
+          </option>
         @endforeach
       </select>
+      @error('experiencia')
+        <p class="text-red-600 text-xs font-medium flex items-center bg-red-100 p-2">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="exclamation-circle w-4 h-4 stroke-1 inline-block mr-1"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {{ $message }}
+        </p>
+      @enderror
     </div>
 
     <div class="mb-5">
       <label
-        for="password"
+        for="ubicacion"
         class="label-form"
       >
           Ubicación:
       </label>
 
       <select
-        name="ubicacions"
-        id="ubicacions"
-        class="input-form truncate"
+        name="ubicacion"
+        id="ubicacion"
+        class="input-form truncate @error('ubicacion') input-invalid @enderror"
       >
         <option selected disabled>--- Selecciona la ubicación ---</option>
         @foreach ($ubicacions as $ubicacion)
-          <option value="{{ $ubicacion->id }}">{{$ubicacion->name}}</option>
+          <option
+            {{ old('ubicacion') == $ubicacion->id ? 'selected' : '' }}
+            value="{{ $ubicacion->id }}"
+          >
+            {{$ubicacion->name}}
+          </option>
         @endforeach
       </select>
+      @error('ubicacion')
+        <p class="text-red-600 text-xs font-medium flex items-center bg-red-100 p-2">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="exclamation-circle w-4 h-4 stroke-1 inline-block mr-1"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {{ $message }}
+        </p>
+      @enderror
     </div>
 
     <div class="mb-5">
       <label
-        for="password"
+        for="salario"
         class="label-form"
       >
           Salario:
       </label>
 
       <select
-        name="salarios"
-        id="salarios"
-        class="input-form truncate"
+        name="salario"
+        id="salario"
+        class="input-form truncate @error('salario') input-invalid @enderror"
       >
         <option selected disabled>--- Selecciona el salario USD ---</option>
         @foreach ($salarios as $salario)
-          <option value="{{ $salario->id }}">{{$salario->name}}</option>
+          <option
+            {{ old('salario') == $salario->id ? 'selected' : '' }}
+            value="{{ $salario->id }}"
+          >
+            {{$salario->name}}
+          </option>
         @endforeach
       </select>
+      @error('salario')
+        <p class="text-red-600 text-xs font-medium flex items-center bg-red-100 p-2">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="exclamation-circle w-4 h-4 stroke-1 inline-block mr-1"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {{ $message }}
+        </p>
+      @enderror
     </div>
 
     <div class="mb-5">
