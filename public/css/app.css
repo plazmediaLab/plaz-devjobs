@@ -28698,23 +28698,19 @@ video {
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 orangered;
+    box-shadow: 0 0 0 0 orangered, 0 0 0 0 rgba(255, 69, 0, 0.5);
   }
 
   40% {
-    box-shadow: 0 0 0 0 orangered, 0 0 0 0 rgba(255, 69, 0, 0);
-  }
-
-  60% {
-    box-shadow: 0 0 0 1rem rgba(255, 69, 0, 0.7), 0 0 0 0rgba 255, 69, 0, 0;
+    box-shadow: 0 0 0 1rem rgba(255, 69, 0, 0), 0 0 0 0.6rem rgba(255, 69, 0, 0);
   }
 
   80% {
-    box-shadow: 0 0 0 1rem rgba(255, 69, 0, 0), 0 0 0 0.7rem rgba(255, 69, 0, 0);
+    box-shadow: 0 0 0 1rem rgba(255, 69, 0, 0), 0 0 0 0.6rem rgba(255, 69, 0, 0);
   }
 
   100% {
-    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0), 0 0 0 0.7rem rgba(255, 69, 0, 0);
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0), 0 0 0 0.6rem rgba(255, 69, 0, 0);
   }
 }
 

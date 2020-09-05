@@ -48692,6 +48692,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _icon_pulse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon-pulse */ "./resources/js/components/icon-pulse.jsx");
+/* harmony import */ var _item_skill__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./item-skill */ "./resources/js/components/item-skill.jsx");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -48714,16 +48715,22 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var Skills = function Skills() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
       skills = _useState2[0],
       setSkills = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(new Set()),
       _useState4 = _slicedToArray(_useState3, 2),
-      fetching = _useState4[0],
-      setFetching = _useState4[1];
+      selectSkills = _useState4[0],
+      setSelectSkills = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      fetching = _useState6[0],
+      setFetching = _useState6[1];
 
   var data = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -48744,16 +48751,6 @@ var Skills = function Skills() {
 
             case 7:
               res = _context.sent;
-              // setSkills(res.sort(function (a, b) {
-              //   if (a.name > b.name) {
-              //     return 1;
-              //   }
-              //   if (a.name < b.name) {
-              //     return -1;
-              //   }
-              //   // a must be equal to b
-              //   return 0;
-              // }));
               setSkills(res);
               setFetching(false);
               _context.next = 16;
@@ -48785,13 +48782,19 @@ var Skills = function Skills() {
     className: "flex items-center justify-center flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_icon_pulse__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
     className: "text-xs text-gray-500 block mt-2"
-  }, "Cargando...")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+  }, "Cargando...")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     className: "flex items-center justify-center flex-wrap space-x-1 space-y-1 font-medium text-gray-600 text-xs"
   }, skills.map(function (item) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_item_skill__WEBPACK_IMPORTED_MODULE_4__["default"], {
       key: item.id,
-      className: "py-1 px-3 rounded-full bg-gray-300"
-    }, item.name);
+      item: item,
+      selectSkills: selectSkills,
+      setSelectSkills: setSelectSkills
+    });
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+    type: "hidden",
+    name: "skills",
+    id: "skills"
   })));
 };
 
@@ -48828,6 +48831,72 @@ function IconPulse() {
     d: "M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z",
     clipRule: "evenodd"
   })));
+}
+;
+
+/***/ }),
+
+/***/ "./resources/js/components/item-skill.jsx":
+/*!************************************************!*\
+  !*** ./resources/js/components/item-skill.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ItemSkill; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+function ItemSkill(_ref) {
+  var item = _ref.item,
+      selectSkills = _ref.selectSkills,
+      setSelectSkills = _ref.setSelectSkills;
+
+  var handleClick = function handleClick(e) {
+    var skill = e.target.textContent;
+
+    if (e.target.classList.contains('bg-purple_grad-500')) {
+      e.target.classList.remove('bg-purple_grad-500');
+      e.target.classList.remove('border-purple_grad-600');
+      e.target.classList.remove('text-white');
+      setSelectSkills(function (prev) {
+        return new Set(_toConsumableArray(prev).filter(function (x) {
+          return x !== skill;
+        }));
+      });
+    } else {
+      e.target.classList.add('bg-purple_grad-500');
+      e.target.classList.add('border-purple_grad-600');
+      e.target.classList.add('text-white');
+      setSelectSkills(new Set([].concat(_toConsumableArray(selectSkills), [skill])));
+    }
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    // Agregar los skills al input hidden
+    document.querySelector('#skills').value = _toConsumableArray(selectSkills);
+  }, [selectSkills]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "py-1 px-3 rounded-full bg-gray-300 cursor-pointer border border-gray-300",
+    onClick: function onClick(e) {
+      return handleClick(e);
+    },
+    value: item.name
+  }, item.name);
 }
 ;
 
