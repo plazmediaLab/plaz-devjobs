@@ -24,7 +24,9 @@
                         id="email"
                         type="email" 
                         class="input-form @error('email') input-invalid @enderror" 
-                        name="email" value="{{ old('email') }}" 
+                        name="email"
+                        value="correo1@correo.com"
+                        {{-- value="{{ old('email') }}"  --}}
                         autocomplete="email" autofocus
                     >
 
@@ -49,6 +51,7 @@
                         class="input-form @error('password') input-invalid @enderror" 
                         name="password" 
                         autocomplete="current-password"
+                        value="ignoramos"
                     >
 
                     @error('password')

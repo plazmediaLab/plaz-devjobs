@@ -112,3 +112,10 @@
     box-shadow: 0 0 0 0 rgba(255, 69, 0, 0), 0 0 0 .6rem rgba(255, 69, 0, 0);
   }
 }
+
+/* 
+ * Skills
+*/
+.active-skill-item{
+  @apply bg-purple_grad-500 border-purple_grad-600 text-white
+}

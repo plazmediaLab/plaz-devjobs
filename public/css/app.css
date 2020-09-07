@@ -28719,6 +28719,22 @@ video {
   }
 }
 
+/* 
+ * Skills
+*/
+
+.active-skill-item {
+  --bg-opacity: 1;
+  background-color: #AF31F1;
+  background-color: rgba(175, 49, 241, var(--bg-opacity));
+  --border-opacity: 1;
+  border-color: #9E2CD9;
+  border-color: rgba(158, 44, 217, var(--border-opacity));
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;

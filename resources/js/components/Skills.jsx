@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import IconPulse from './icon-pulse';
 import ItemSkill from './item-skill';
 
-const Skills = () => {
+const Skills = ({ oldSkills }) => {
 
+  const [mounted, setMounted] = useState(false);
   const [skills, setSkills] = useState([]);
+  const [olds, setOlds] = useState([]);
   const [selectSkills, setSelectSkills] = useState(new Set())
   const [fetching, setFetching] = useState(false);
 
@@ -16,8 +18,8 @@ const Skills = () => {
       const res = await req.json();
       
       setSkills(res);
-
       setFetching(false);
+      setMounted(true);
 
     } catch (error) {
       console.log(error);
@@ -26,6 +28,16 @@ const Skills = () => {
   }
 
   useEffect(() => {
+    if(mounted){
+      if(oldSkills){
+        const oldSkillsArray = oldSkills.split(',');
+        setOlds(oldSkillsArray);
+        oldSkillsArray.forEach(skill => selectSkills.add(skill));
+      }
+    }
+  }, [mounted]);
+  useEffect(() => {
+    // Petición HTTP a las habilidades
     data();
   }, []);
 
@@ -40,10 +52,10 @@ const Skills = () => {
         <div>
           <ul className="flex items-center justify-center flex-wrap space-x-1 space-y-1 font-medium text-gray-600 text-xs">
             {skills.map(item => (
-              <ItemSkill key={item.id} item={ item } selectSkills={ selectSkills } setSelectSkills={ setSelectSkills }/>
+              <ItemSkill key={item.id} item={ item } selectSkills={ selectSkills } setSelectSkills={ setSelectSkills } olds={ olds }/>
             ))}
           </ul>
-          <input type="hidden" name="skills" id="skills"/>
+          
         </div>
       ) }
     </React.Fragment>
@@ -52,6 +64,6 @@ const Skills = () => {
 
 export default Skills;
 
-if (document.getElementById('example')) {
-  ReactDOM.render(<Skills />, document.getElementById('example'));
+if (document.getElementById('skills-list')) {
+  ReactDOM.render(<Skills oldSkills={ oldSkills }/>, document.getElementById('skills-list'));
 }

@@ -220,13 +220,24 @@
 
     <div class="mb-5">
       <label
-        for="password"
+        for="skills"
         class="label-form"
       >
         Habilidades requeridas:
+        <span class="text-red-600 text-label font-medium lowercase">
+          @error('skills') Selecciona al menos 3 habilidades para la vacante  @enderror
+        </span>
       </label>
 
-      <div id="example"></div>
+      <div id="skills-list"></div>
+
+      <input type="hidden" name="skills" id="skills">
+      @error('skills')
+        <p class="text-red-600 text-xs font-medium flex items-center bg-red-100 p-2">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="exclamation-circle w-4 h-4 stroke-1 inline-block mr-1"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {{ $message }}
+        </p>
+      @enderror
 
     </div>
 
@@ -247,6 +258,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js" integrity="sha512-9WciDs0XP20sojTJ9E7mChDXy6pcO0qHpwbEJID1YVavz2H6QBz5eLoDD8lseZOb2yGT8xDNIV7HIe1ZbuiDWg==" crossorigin="anonymous"></script>
 
   <script>
+    // Manera 1 de pasar props hacia componentes de react
+    // window.oldSkills = {!! json_encode(old('skills')) !!};
+    // Manera 2 de pasar props hacia componentes de react
+    let oldSkills = {!! json_encode(old('skills')) !!};
 
     Dropzone.autoDiscover = false;
 

@@ -48716,24 +48716,36 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Skills = function Skills() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+var Skills = function Skills(_ref) {
+  var oldSkills = _ref.oldSkills;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
-      skills = _useState2[0],
-      setSkills = _useState2[1];
+      mounted = _useState2[0],
+      setMounted = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(new Set()),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       _useState4 = _slicedToArray(_useState3, 2),
-      selectSkills = _useState4[0],
-      setSelectSkills = _useState4[1];
+      skills = _useState4[0],
+      setSkills = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       _useState6 = _slicedToArray(_useState5, 2),
-      fetching = _useState6[0],
-      setFetching = _useState6[1];
+      olds = _useState6[0],
+      setOlds = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(new Set()),
+      _useState8 = _slicedToArray(_useState7, 2),
+      selectSkills = _useState8[0],
+      setSelectSkills = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      fetching = _useState10[0],
+      setFetching = _useState10[1];
 
   var data = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
       var req, res;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
@@ -48753,29 +48765,42 @@ var Skills = function Skills() {
               res = _context.sent;
               setSkills(res);
               setFetching(false);
-              _context.next = 16;
+              setMounted(true);
+              _context.next = 17;
               break;
 
-            case 12:
-              _context.prev = 12;
+            case 13:
+              _context.prev = 13;
               _context.t0 = _context["catch"](1);
               console.log(_context.t0);
               setFetching(false);
 
-            case 16:
+            case 17:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[1, 12]]);
+      }, _callee, null, [[1, 13]]);
     }));
 
     return function data() {
-      return _ref.apply(this, arguments);
+      return _ref2.apply(this, arguments);
     };
   }();
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    if (mounted) {
+      if (oldSkills) {
+        var oldSkillsArray = oldSkills.split(',');
+        setOlds(oldSkillsArray);
+        oldSkillsArray.forEach(function (skill) {
+          return selectSkills.add(skill);
+        });
+      }
+    }
+  }, [mounted]);
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    // Petición HTTP a las habilidades
     data();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, fetching ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -48789,19 +48814,18 @@ var Skills = function Skills() {
       key: item.id,
       item: item,
       selectSkills: selectSkills,
-      setSelectSkills: setSelectSkills
+      setSelectSkills: setSelectSkills,
+      olds: olds
     });
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-    type: "hidden",
-    name: "skills",
-    id: "skills"
-  })));
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Skills);
 
-if (document.getElementById('example')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Skills, null), document.getElementById('example'));
+if (document.getElementById('skills-list')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Skills, {
+    oldSkills: oldSkills
+  }), document.getElementById('skills-list'));
 }
 
 /***/ }),
@@ -48864,25 +48888,32 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function ItemSkill(_ref) {
   var item = _ref.item,
       selectSkills = _ref.selectSkills,
-      setSelectSkills = _ref.setSelectSkills;
+      setSelectSkills = _ref.setSelectSkills,
+      olds = _ref.olds;
 
   var handleClick = function handleClick(e) {
     var skill = e.target.textContent;
 
-    if (e.target.classList.contains('bg-purple_grad-500')) {
-      e.target.classList.remove('bg-purple_grad-500');
-      e.target.classList.remove('border-purple_grad-600');
-      e.target.classList.remove('text-white');
+    if (e.target.classList.contains('active-skill-item')) {
+      e.target.classList.remove('active-skill-item');
       setSelectSkills(function (prev) {
         return new Set(_toConsumableArray(prev).filter(function (x) {
           return x !== skill;
         }));
       });
     } else {
-      e.target.classList.add('bg-purple_grad-500');
-      e.target.classList.add('border-purple_grad-600');
-      e.target.classList.add('text-white');
+      e.target.classList.add('active-skill-item');
       setSelectSkills(new Set([].concat(_toConsumableArray(selectSkills), [skill])));
+    }
+  };
+
+  var oldsValidate = function oldsValidate(skill) {
+    if (olds.find(function (x) {
+      return x === skill;
+    })) {
+      return 'active-skill-item';
+    } else {
+      return '';
     }
   };
 
@@ -48891,7 +48922,7 @@ function ItemSkill(_ref) {
     document.querySelector('#skills').value = _toConsumableArray(selectSkills);
   }, [selectSkills]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "py-1 px-3 rounded-full bg-gray-300 cursor-pointer border border-gray-300",
+    className: "py-1 px-3 rounded-full bg-gray-300 cursor-pointer border border-gray-300 ".concat(oldsValidate(item.name)),
     onClick: function onClick(e) {
       return handleClick(e);
     },
