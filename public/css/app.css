@@ -88,8 +88,13 @@
   color: #666;
 }
 
-.dropzone.drag-hover {
-  border: 2px dashed #5480DE !important;
+.dropzone.drag-hover,
+.dropzone.drag-hover.error-drop {
+  border: 2px solid #5480DE !important;
+}
+
+.dropzone.error-drop {
+  border: 2px dashed #fc8181 !important;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

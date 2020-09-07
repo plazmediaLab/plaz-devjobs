@@ -173,15 +173,26 @@
 
     <div class="mb-5">
       <label
-        for="password"
+        for="descripcion"
         class="label-form"
       >
           Descripción:
       </label>
 
-      <div class="editable border input-form"></div>
+      <textarea 
+        name="descripcion"
+        id="descripcion"
+        rows="5"
+        placeholder="Agregá una descripción a la vacante"
+        class="resize-y border input-form @error('descripcion') input-invalid @enderror"
+      >{{ old('descripcion') }}</textarea>
 
-      <input type="hidden" name="descripcion" id="descripcion">
+      @error('descripcion')
+        <p class="text-red-600 text-xs font-medium flex items-center bg-red-100 p-2">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="exclamation-circle w-4 h-4 stroke-1 inline-block mr-1"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {{ $message }}
+        </p>
+      @enderror
 
     </div>
 
@@ -193,11 +204,17 @@
           Imagen Vacante:
       </label>
 
-      <div id="dropzoneDevJobs" class="dropzone input-form"></div>
+      <div id="dropzoneDevJobs" class="dropzone input-form @error('imagen') error-drop @enderror"></div>
 
       <div id="error-message"></div>
 
-      <input type="hidden" name="imagen" id="imagen">
+      <input type="hidden" name="imagen" id="imagen" value="{{ old('imagen') }}">
+      @error('imagen')
+        <p class="text-red-600 text-xs font-medium flex items-center bg-red-100 p-2">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="exclamation-circle w-4 h-4 stroke-1 inline-block mr-1"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {{ $message }}
+        </p>
+      @enderror
 
     </div>
 
@@ -235,40 +252,6 @@
 
     // Medium editor
     document.addEventListener('DOMContentLoaded', () => {
-      const editor = new MediumEditor('.editable', {
-        toolbar:{
-          buttons: [
-            'bold',
-            'bold',
-            'italic',
-            'underline',
-            'h2',
-            'h3',
-            'strikethrough',
-            'image',
-            'quote',
-            'orderedlist',
-            'unorderedlist',
-            'indent',
-            'outdent',
-            'justifyLeft',
-            'justifyCenter',
-            'justifyRight',
-            'justifyFull',
-          ],
-          static: true,
-          stric: true,
-        },
-        placeholder:{
-          text: 'Agregá una descripción a la vacante',
-          hideOnClick: false
-        }
-      });
-
-      editor.subscribe('editableInput', (eventObj, editable) => {
-        const contenido = editor.getContent();
-        document.querySelector('#descripcion').value = contenido;
-      });
 
       // Dropzone
       const dropzoneDevJobs = new Dropzone('#dropzoneDevJobs', {
@@ -282,6 +265,20 @@
         acceptedFiles: '.png, .jpg, .jpeg, .gif, .bmp',
         maxFiles: 1,
         addRemoveLinks: true,
+        init: function(){
+          if(document.querySelector('#imagen').value.trim()){
+            let imagenPublicada = {};
+
+            imagenPublicada.size = 1234;
+            imagenPublicada.name = document.querySelector('#imagen').value;
+
+            this.options.addedfile.call(this, imagenPublicada);
+            this.options.thumbnail.call(this, imagenPublicada, `/storage/vacantes/${imagenPublicada.name}`);
+
+            imagenPublicada.previewElement.classList.add('dz-sucess');
+            imagenPublicada.previewElement.classList.add('dz-complete');
+          }
+        },
         success: (file, res) => {
           document.querySelector('#error-message').textContent = '';
 
@@ -308,7 +305,7 @@
           file.previewElement.parentNode.removeChild(file.previewElement);
 
           params = {
-            imagen: file.nombreServidor
+            imagen: file.nombreServidor ?? document.querySelector('#imagen').value
           }
 
           axios.post('/vacantes/borrarimagen', params)

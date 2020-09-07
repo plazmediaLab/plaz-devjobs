@@ -65,6 +65,10 @@
 
 }
 
-.dropzone.drag-hover {
-    border: 2px dashed #5480DE !important;
+.dropzone.drag-hover,
+.dropzone.drag-hover.error-drop{
+    border: 2px solid #5480DE !important;
+}
+.dropzone.error-drop {
+    border: 2px dashed #fc8181 !important;
 }
