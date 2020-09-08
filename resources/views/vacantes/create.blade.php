@@ -116,7 +116,7 @@
       >
         <div class="flex items-center mb-3">
           <div class="w-5 inline-block mr-1 animate-spin-slow">
-            <svg width={10} height={10} viewBox="0 0 34 32" {...props}>
+            <svg viewBox="0 0 34 32" {...props}>
               <path
                 fill="#52c2df"
                 d="M19.314 15.987a2.392 2.392 0 11-4.784 0 2.392 2.392 0 014.784 0z"

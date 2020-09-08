@@ -59,6 +59,7 @@ class VacanteController extends Controller
      */
     public function store(Request $request)
     {
+        // Validar datos del formulario
         $data = $request->validate([
             'titulo' => 'required|min:8',
             'categoria' => 'required',
@@ -70,7 +71,19 @@ class VacanteController extends Controller
             'skills' => 'required'
         ]);
 
-        return json_encode($data);
+        // Almacenar en la DB
+        auth()->user()->vacantes()->create([
+            'titulo' => $data['titulo'],
+            'imagen' => $data['imagen'],
+            'descripcion' => $data['descripcion'],
+            'skills' => $data['skills'],
+            'categoria_id' => $data['categoria'],
+            'experiencia_id' => $data['experiencia'],
+            'ubicacion_id' => $data['ubicacion'],
+            'salario_id' => $data['salario'],
+        ]);
+
+        return redirect()->action('VacanteController@index');
     }
 
     /**
