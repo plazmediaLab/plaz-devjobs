@@ -33,6 +33,7 @@ const Skills = ({ oldSkills }) => {
         const oldSkillsArray = oldSkills.split(',');
         setOlds(oldSkillsArray);
         oldSkillsArray.forEach(skill => selectSkills.add(skill));
+        document.querySelector('#skills').value = [...selectSkills];
       }
     }
   }, [mounted]);

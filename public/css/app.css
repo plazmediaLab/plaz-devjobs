@@ -28520,6 +28520,11 @@ video {
           animation: bounce 1s infinite;
 }
 
+.animate-spin-slow{
+  -webkit-animation: spin 4s linear infinite;
+          animation: spin 4s linear infinite;
+}
+
 .bg-points {
   background-image: radial-gradient(rgba(0, 153, 255, 0.3) 1px, #ECF0F3 1px);
   background-position: 0 0, 10px 10px;
@@ -56500,6 +56505,11 @@ video {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .sm\:animate-spin-slow{
+    -webkit-animation: spin 4s linear infinite;
+            animation: spin 4s linear infinite;
+  }
 }
 
 @media (min-width: 768px){
@@ -84266,6 +84276,11 @@ video {
   .md\:animate-bounce{
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .md\:animate-spin-slow{
+    -webkit-animation: spin 4s linear infinite;
+            animation: spin 4s linear infinite;
   }
 }
 
@@ -112034,6 +112049,11 @@ video {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+
+  .lg\:animate-spin-slow{
+    -webkit-animation: spin 4s linear infinite;
+            animation: spin 4s linear infinite;
+  }
 }
 
 @media (min-width: 1280px){
@@ -139800,5 +139820,10 @@ video {
   .xl\:animate-bounce{
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .xl\:animate-spin-slow{
+    -webkit-animation: spin 4s linear infinite;
+            animation: spin 4s linear infinite;
   }
 }
