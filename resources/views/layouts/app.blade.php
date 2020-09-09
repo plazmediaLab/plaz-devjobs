@@ -75,7 +75,7 @@
         </nav>
     </div>
 
-    <main class="py-4 text-sm">
+    <main class="py-4 text-sm container mx-auto px-2">
         @yield('content')
     </main>
 

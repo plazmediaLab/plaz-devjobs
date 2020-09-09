@@ -119,3 +119,10 @@
 .active-skill-item{
   @apply bg-purple_grad-500 border-purple_grad-600 text-white
 }
+
+/* 
+ * Skills
+*/
+.table-title{
+  @apply py-3 px-4 border-none text-xs leading-4 font-bold text-purple_grad-500 uppercase tracking-wider
+}

@@ -28740,6 +28740,26 @@ video {
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
+/* 
+ * Skills
+*/
+
+.table-title {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-style: none;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  --text-opacity: 1;
+  color: #AF31F1;
+  color: rgba(175, 49, 241, var(--text-opacity));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
