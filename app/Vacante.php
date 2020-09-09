@@ -18,4 +18,10 @@ class Vacante extends Model
         'ubicacion_id',
         'salario_id',
     ];
+
+    // Relación 1:1 --- categoria => vacante
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }
