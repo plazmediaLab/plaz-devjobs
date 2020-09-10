@@ -21,6 +21,9 @@
   outline-width: 0!important;
   outline: none!important;
 }
+button{
+  @apply transition-all duration-150
+}
 
 // .logo-text{
 //   background: -webkit-linear-gradient(to right, #3494e6, #ec6ead); /* Chrome 10-25, Safari 5.1-6 */

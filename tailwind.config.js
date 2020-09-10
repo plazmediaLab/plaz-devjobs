@@ -74,6 +74,9 @@ module.exports = {
         reddit: "#ff4500",
       },
     },
+    height: {
+      banner: '20rem',
+    }
   },
   variants: {},
   plugins: [],
