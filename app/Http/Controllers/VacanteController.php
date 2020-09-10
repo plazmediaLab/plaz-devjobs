@@ -14,11 +14,11 @@ class VacanteController extends Controller
 {
 
     // Protejer ruta ante autenticación y verificación del usuario 
-    public function __construct()
-    {
-        // Revisar que el usuario esta autenticado
-        $this->middleware(['auth', 'verified']);
-    }
+    // public function __construct()
+    // {
+    //     // Revisar que el usuario esta autenticado
+    //     $this->middleware(['auth', 'verified']);
+    // }
 
     /**
      * Display a listing of the resource.
@@ -106,7 +106,10 @@ class VacanteController extends Controller
      */
     public function show(Vacante $vacante)
     {
-        //
+        // Mostrar una vacante en especifico
+
+
+        return view('vacantes.show')->with('vacante', $vacante);
     }
 
     /**

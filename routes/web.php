@@ -22,15 +22,30 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/*
+* 
+* Rutas de Vacantes 
+* 
+*/
 
-// Rutas de Vacantes
-Route::get('/vacantes', 'VacanteController@index')->name('vacantes.index');
-Route::get('/vacantes/create', 'VacanteController@create')->name('vacantes.create');
-Route::post('/vacantes', 'VacanteController@store')->name('vacantes.store');
+// Protejer ruta ante autenticación y verificación del usuario 
+// Rutas protegidas
+Route::group(['middleware' => ['auth', 'verified']], function(){
+    Route::get('/vacantes', 'VacanteController@index')->name('vacantes.index');
+    Route::get('/vacantes/create', 'VacanteController@create')->name('vacantes.create');
+    Route::post('/vacantes', 'VacanteController@store')->name('vacantes.store');
+    
+    // Skills
+    Route::get('/skills', 'SkillController@index')->name('skill.index');
+    
+    // Subir imagen
+    Route::post('/vacantes/imagen', 'VacanteController@imagen')->name('vacantes.imagen');
+    Route::post('/vacantes/borrarimagen', 'VacanteController@borrarimagen')->name('vacantes.borrar');
+});
 
-// Skills
-Route::get('/skills', 'SkillController@index')->name('skill.index');
+// Rutas publicas
+Route::get('/vacantes/{vacante}', 'VacanteController@show')->name('vacantes.show');
 
-// Subir imagen
-Route::post('/vacantes/imagen', 'VacanteController@imagen')->name('vacantes.imagen');
-Route::post('/vacantes/borrarimagen', 'VacanteController@borrarimagen')->name('vacantes.borrar');
+/*
+*   ------------------
+*/
