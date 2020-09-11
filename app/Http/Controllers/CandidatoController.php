@@ -35,7 +35,34 @@ class CandidatoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validación de datos recibidos
+        $data = $request->validate([
+            'nombre' => 'required',
+            'email' => 'required|email',
+            // 'cv' => 'required|mimes:pdf|max:1000',
+            'vacante_id' => 'required',
+        ]);
+        
+        // Guardar datos en DB
+
+        // primer metodo
+        $candidato = new Candidato();
+        $candidato->nombre = $data['nombre'];
+        $candidato->email = $data['email'];
+        $candidato->cv = 'example.pdf';
+        $candidato->vacante_id = $data['vacante_id'];
+        
+        // Segundo metodo -> Este metodo funciona si es que tibieramos todos los campos requeridos listospara inyectar
+        //                   Pero al no tener el CV en este momento, tenemos que agregarlo manualmente.
+        //                   Agregado que requerimos definir el fillable en el Modelo de Candidato
+        $candidato = new Candidato($data);
+        $candidato->cv = 'example.pdf';
+
+        $candidato->save();
+
+        dd($data);
+
+        return 'Desde CandidatoController';
     }
 
     /**

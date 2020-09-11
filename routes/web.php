@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CandidatoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,9 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
     Route::post('/vacantes/imagen', 'VacanteController@imagen')->name('vacantes.imagen');
     Route::post('/vacantes/borrarimagen', 'VacanteController@borrarimagen')->name('vacantes.borrar');
 });
+
+// Enviar datos de postulante a una vacante
+Route::post('/candidatos/store', 'CandidatoController@store')->name('candidatos.store');
 
 // Rutas publicas
 Route::get('/vacantes/{vacante}', 'VacanteController@show')->name('vacantes.show');

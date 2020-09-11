@@ -1,24 +1,29 @@
 <form 
-  action=""
+  action="{{ route('candidatos.store') }}"
+  method="POST"
   class="p-4 border border-gray-300 rounded-container"
+  novalidate
 >
+  @csrf
+
   <h3 class="text-lg font-medium text-center block mb-2">Postular por vacante</h3>
   
   <div class="mb-2">
     <label 
-      for="name"
+      for="nombre"
       class="label-form"
     >
       Nombre:
     </label>
     <input 
       type="text"
-      name="name"
-      id="name"
-      class="input-form @error('name') input-invalid @enderror"
+      name="nombre"
+      id="nombre"
+      class="input-form @error('nombre') input-invalid @enderror"
       placeholder="Nombre completo"
+      value="{{ old('nombre') }}"
     >
-    @error('name')
+    @error('nombre')
       <span class="error-message" role="alert">
         <svg viewBox="0 0 20 20" fill="currentColor" class="information-circle w-4 h-4 inline-block"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
         <strong>{{ $message }}</strong>
@@ -39,6 +44,7 @@
       id="email"
       class="input-form @error('email') input-invalid @enderror"
       placeholder="Correo electrónico"
+      value="{{ old('email') }}"
     >
     @error('email')
       <span class="error-message" role="alert">
@@ -55,6 +61,11 @@
     >
       Curriculum (CV):
     </label>
+    @error('cv')
+      <p class="text-red-600 text-xs text-center block">
+        Tu curriculum es obligatorio para postular a la vacante
+      </p>  
+    @enderror
     <label
       id="text-file" 
       for="cv"
@@ -70,6 +81,7 @@
         id="cv"
         class="hidden"
         accept="application/pdf"
+        value="{{ old('cv') }}"
       >
     </div>
     @error('cv')
