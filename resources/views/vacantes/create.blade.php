@@ -208,7 +208,7 @@
       @enderror
     </div>
 
-    <div class="mb-5">
+    {{-- <div class="mb-5">
       <label
         for="descripcion"
         class="label-form"
@@ -222,7 +222,7 @@
         rows="5"
         placeholder="Agregá una descripción a la vacante"
         class="resize-y border input-form @error('descripcion') input-invalid @enderror"
-      >{{ old('descripcion') }}</textarea>
+      ></textarea>
 
       @error('descripcion')
         <p class="text-red-600 text-xs font-medium flex items-center bg-red-100 p-2">
@@ -230,7 +230,24 @@
           {{ $message }}
         </p>
       @enderror
+    </div> --}}
+    <div class="mb-5">
+      <label
+        for="password"
+        class="label-form"
+      >
+          Descripción:
+      </label>
 
+      <div class="editable border input-form"></div>
+
+    <input type="hidden" name="descripcion" id="descripcion" value="{{ old('descripcion') }}">
+      @error('descripcion')
+        <p class="text-red-600 text-xs font-medium flex items-center bg-red-100 p-2">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="exclamation-circle w-4 h-4 stroke-1 inline-block mr-1"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {{ $message }}
+        </p>
+      @enderror
     </div>
 
     <div class="mb-5">
@@ -277,8 +294,44 @@
 
     Dropzone.autoDiscover = false;
 
-    // Medium editor
     document.addEventListener('DOMContentLoaded', () => {
+      // Medium editor
+      const editor = new MediumEditor('.editable', {
+        toolbar:{
+          buttons: [
+            'bold',
+            'bold',
+            'italic',
+            'underline',
+            'h2',
+            'h3',
+            'strikethrough',
+            'image',
+            'quote',
+            'orderedlist',
+            'unorderedlist',
+            'indent',
+            'outdent',
+            'justifyLeft',
+            'justifyCenter',
+            'justifyRight',
+            'justifyFull',
+          ],
+          static: true,
+          stric: true,
+        },
+        placeholder:{
+          text: 'Agregá una descripción a la vacante',
+          hideOnClick: false
+        }
+      });
+      // Agregar el contenido a Medium Editor
+      editor.subscribe('editableInput', function(eventObj, editable){
+        const contenido = editor.getContent();
+        document.querySelector('#descripcion').value = contenido;
+      });
+      // Agregar el contenido old() a Medium Editor
+      editor.setContent( document.querySelector('#descripcion').value );
 
       // Dropzone
       const dropzoneDevJobs = new Dropzone('#dropzoneDevJobs', {

@@ -24,8 +24,8 @@
       </header>
       <img class="object-cover w-full h-banner mb-3" src="/storage/vacantes/{{ $vacante->imagen }}" alt="Vacante banner">
       <p class="text-xl font-medium">Descripción: </p>
-      <article>
-        {{ $vacante->descripcion }}
+      <article class="descripcion">
+        {!! $vacante->descripcion !!}
       </article>
     </section>
 

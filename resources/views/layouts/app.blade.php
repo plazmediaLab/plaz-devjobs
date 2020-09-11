@@ -75,7 +75,7 @@
         </nav>
     </div>
 
-    <main class="py-4 text-sm container mx-auto px-2">
+    <main class="py-4 text-sm container mx-auto px-2 {{ auth()->user() ? '' : 'bg-white shadow-card_white' }}">
         @yield('content')
     </main>
 

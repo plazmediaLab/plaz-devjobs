@@ -29,7 +29,12 @@
                 <td class="border px-4 py-2 border-none whitespace-no-wrap">
                   <div class="flex items-center">
                     <div>
-                      <div class="text-sm leading-5 font-medium">{{$item->titulo}}</div>
+                      <a 
+                        class="text-sm leading-5 font-medium hover:text-p_blue-500"
+                        href="{{ route('vacantes.show', ['vacante' => $item->id]) }}"
+                      >
+                        {{$item->titulo}}
+                      </a>
                       <div class="text-description leading-5 text-gray-500">Categoria: <span class="font-medium text-gray-600">{{ $item->categoria->name }}</span></div>
                     </div>
                   </div>

@@ -1,4 +1,6 @@
-@import url(https://rsms.me/inter/inter.css);html {
+@import url(https://rsms.me/inter/inter.css);@charset "UTF-8";
+
+html {
   font-family: "Inter", sans-serif;
 }
 
@@ -28679,6 +28681,47 @@ button {
   color: rgba(175, 49, 241, var(--text-opacity));
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+/*
+*   Estilos para descripción proveniente de Medium editor
+*/
+
+.descripcion {
+  min-height: 300px;
+}
+
+.descripcion ol, .descripcion ul, .descripcion h1, .descripcion h2, .descripcion h3, .descripcion p, .descripcion a {
+  color: #4a5568;
+}
+
+.descripcion ol, .descripcion ul {
+  padding-left: 50px;
+}
+
+.descripcion ol {
+  list-style: decimal;
+}
+
+.descripcion ul {
+  list-style: disc;
+}
+
+.descripcion h2, .descripcion h3 {
+  margin: 1rem 0;
+}
+
+.descripcion h2 {
+  font-size: 1.8rem;
+}
+
+.descripcion h3 {
+  font-size: 2.2rem;
+}
+
+.descripcion p {
+  font-size: 1rem;
+  line-height: 2;
 }
 
 @media (min-width: 640px){
