@@ -14,3 +14,4 @@ require('./bootstrap');
 
 require('./components/Skills.jsx');
 require('./components/vacantes/empty-list');
+require('./components/ui/success-message');

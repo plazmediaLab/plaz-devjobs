@@ -44,4 +44,10 @@ class Vacante extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    // Relación 1:n vacante => candidato
+    public function candidatos()
+    {
+        return $this->hasMany(Candidato::class);
+    }
 }

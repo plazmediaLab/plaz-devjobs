@@ -28724,6 +28724,15 @@ button {
   line-height: 2;
 }
 
+/*
+* Seccess Message
+*/
+
+.close-message {
+  height: 0px;
+  transition: all 0.7s ease-in-out;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;

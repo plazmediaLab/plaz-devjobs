@@ -2,6 +2,7 @@
   action="{{ route('candidatos.store') }}"
   method="POST"
   class="p-4 border border-gray-300 rounded-container"
+  enctype="multipart/form-data"
   novalidate
 >
   @csrf

@@ -163,3 +163,11 @@ button{
       line-height: 2;
   }
 }
+
+/*
+* Seccess Message
+*/
+.close-message{
+  height: 0px;
+  transition: all .7s ease-in-out;
+}

@@ -48633,6 +48633,8 @@ __webpack_require__(/*! ./components/Skills.jsx */ "./resources/js/components/Sk
 
 __webpack_require__(/*! ./components/vacantes/empty-list */ "./resources/js/components/vacantes/empty-list.jsx");
 
+__webpack_require__(/*! ./components/ui/success-message */ "./resources/js/components/ui/success-message.jsx");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -48941,6 +48943,58 @@ function ItemSkill(_ref) {
   }, item.name);
 }
 ;
+
+/***/ }),
+
+/***/ "./resources/js/components/ui/success-message.jsx":
+/*!********************************************************!*\
+  !*** ./resources/js/components/ui/success-message.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SuccessMessage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function SuccessMessage(_ref) {
+  var message = _ref.message;
+  var component = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (message) {
+      var h = component.current.clientHeight;
+      document.getElementById('send-message').style.height = "".concat(h, "px");
+      setTimeout(function () {
+        document.getElementById('send-message').style.height = '0px';
+      }, 10000);
+    }
+  }, [message]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "p-3 flex items-center justify-center h-full",
+    ref: component
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "w-5 h-5 inline-block mr-1",
+    fill: "currentColor",
+    viewBox: "0 0 20 20",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    fillRule: "evenodd",
+    d: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z",
+    clipRule: "evenodd"
+  })), message));
+}
+;
+
+if (document.getElementById('send-message')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SuccessMessage, {
+    message: message
+  }), document.getElementById('send-message'));
+}
 
 /***/ }),
 

@@ -23,6 +23,13 @@
 </head>
 <body class="{{auth()->check() ? 'bg-white' : 'bg-background bg-points'}}">
 
+    <div 
+        id="send-message"
+        class="bg-green-500 text-white text-sm close-message overflow-hidden"
+    ></div>
+    @if(session('enviado'))
+    @endif
+
     <nav class="bg-carbon-700 text-white">
         <div class="container mx-auto flex justify-between items-center py-2 pl-4 md:pl-0">
             <a href="{{ url('/') }}" class="font-medium text-lg relative">
@@ -80,6 +87,12 @@
     </main>
 
     @yield('scripts')
+
+    <script>
+
+        let message = {!! json_encode(session('enviado')) !!}
+
+    </script>
 
 </body>
 </html>

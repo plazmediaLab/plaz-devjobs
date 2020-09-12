@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Candidato;
+use App\Vacante;
 use Illuminate\Http\Request;
 
 class CandidatoController extends Controller
@@ -39,30 +40,27 @@ class CandidatoController extends Controller
         $data = $request->validate([
             'nombre' => 'required',
             'email' => 'required|email',
-            // 'cv' => 'required|mimes:pdf|max:1000',
+            'cv' => 'required|mimes:pdf|max:1500',
             'vacante_id' => 'required',
         ]);
-        
-        // Guardar datos en DB
 
-        // primer metodo
-        $candidato = new Candidato();
-        $candidato->nombre = $data['nombre'];
-        $candidato->email = $data['email'];
-        $candidato->cv = 'example.pdf';
-        $candidato->vacante_id = $data['vacante_id'];
-        
-        // Segundo metodo -> Este metodo funciona si es que tibieramos todos los campos requeridos listospara inyectar
-        //                   Pero al no tener el CV en este momento, tenemos que agregarlo manualmente.
-        //                   Agregado que requerimos definir el fillable en el Modelo de Candidato
-        $candidato = new Candidato($data);
-        $candidato->cv = 'example.pdf';
+        // Almacenar el PDF en DB
+        if ($request->file('cv')) {
+            $file = $request->file('cv');
+            $newFileName = time() . '.' . $file->extension();
+            $ubicacion = public_path('/storage/cv');
+            $file->move($ubicacion, $newFileName);
+        }
 
-        $candidato->save();
+        $vacante = Vacante::find($data['vacante_id']);
 
-        dd($data);
+        $vacante->candidatos()->create([
+            'nombre' => $data['nombre'],
+            'email' => $data['email'],
+            'cv' => $newFileName
+        ]);
 
-        return 'Desde CandidatoController';
+        return back()->with('enviado', 'Tus datos han sido ENVIADOS, el reclutador se pondra en contacto contigo si eres seleccionado como prospecto.');
     }
 
     /**
