@@ -42,9 +42,13 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
     // Subir imagen
     Route::post('/vacantes/imagen', 'VacanteController@imagen')->name('vacantes.imagen');
     Route::post('/vacantes/borrarimagen', 'VacanteController@borrarimagen')->name('vacantes.borrar');
+
+    // Notificaciones
+    Route::get('/notificaciones', 'NotificacionesController')->name('notificaciones');
 });
 
 // Enviar datos de postulante a una vacante
+Route::get('/candidatos/{id}', 'CandidatoController@index')->name('candidatos.index');
 Route::post('/candidatos/store', 'CandidatoController@store')->name('candidatos.store');
 
 // Rutas publicas

@@ -49,7 +49,24 @@
                         </li>
                     @endif
                 @else
-                    <li class="flex items-center">
+                    <li class="flex items-center relative">
+                        @if (Auth::user()->unreadNotifications->count() > 0)
+                            <a 
+                                href="{{ route('notificaciones') }}"
+                                class="notification"
+                                @if (Auth::user()->unreadNotifications->count() === 1)
+                                    title="Tienes: {{ Auth::user()->unreadNotifications->count() }} notificación sin leer"
+                                @else
+                                    title="Tienes: {{ Auth::user()->unreadNotifications->count() }} notificaciones sin leer"
+                                @endif
+                            >
+                                <span
+                                    class=""
+                                >
+                                    {{ Auth::user()->unreadNotifications->count() }}
+                                </span>
+                            </a>
+                        @endif
                         <a id="navbarDropdown" class="inline-block py-2 px-4 hover:bg-carbon-600 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>

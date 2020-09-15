@@ -16,6 +16,8 @@ module.exports = {
         card: '5px',
       },
       fontSize: {
+        'mini': '.5rem',
+        'xxs': '.65rem',
         'number-h1': '24px',
         'title-page': '18px',
         'title-item': '14px',
@@ -74,9 +76,9 @@ module.exports = {
         reddit: "#ff4500",
       },
     },
-    height: {
-      banner: '20rem',
-    }
+    // height: {
+    //   banner: '20rem',
+    // }
   },
   variants: {},
   plugins: [],

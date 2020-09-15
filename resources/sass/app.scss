@@ -163,6 +163,9 @@ button{
       line-height: 2;
   }
 }
+.banner{
+  height: 20rem;
+}
 
 /*
 * Seccess Message
@@ -170,4 +173,17 @@ button{
 .close-message{
   height: 0px;
   transition: all .7s ease-in-out;
+}
+/*
+* Notification indicator
+*/
+.notification{
+  overflow: visible;
+  z-index: 0;
+  @apply bg-orange_grad-500 text-white rounded-full w-5 h-5 grid items-center justify-center relative text-xxs
+}
+.notification::before{
+  content: '';
+  z-index: -1;
+  @apply w-5 h-5 bg-orange_grad-500 animate-ping absolute rounded-full top-0 left-0
 }

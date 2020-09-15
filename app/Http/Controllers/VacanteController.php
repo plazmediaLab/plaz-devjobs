@@ -32,7 +32,7 @@ class VacanteController extends Controller
         // $vacantes = Vacante::where('user_id', auth()->user()->id)->get();
         
         // Taer a todas las vacantes correcpondientes al Usuario, con paginación
-        $vacantes = Vacante::where('user_id', auth()->user()->id)->paginate(5);
+        $vacantes = Vacante::where('user_id', auth()->user()->id)->orderBy('created_at','DESC')->paginate(5);
 
         // dd($vacantes);
 

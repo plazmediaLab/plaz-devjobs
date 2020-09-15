@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Candidato;
 use App\Vacante;
+use App\Candidato;
 use Illuminate\Http\Request;
+use App\Notifications\NuevoCandidato;
+use Illuminate\Support\Facades\Auth;
 
 class CandidatoController extends Controller
 {
@@ -13,9 +15,25 @@ class CandidatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        // Obtener el parametro enviado en el Request 
+        $id_vacante = $request->route('id');
+        $id_notify = $request->id_notify;
+
+        auth()->user()->unreadNotifications->where('id', $id_notify)->markAsRead();
+
+        // dd($id_notify);
+        
+        // Obtener los candidatos en base al ID de la vacante
+        $vacante = Vacante::findOrFail($id_vacante);
+
+
+        // dd($vacante->candidatos);
+
+        return view('candidatos.index', compact([
+            'vacante'
+        ]));
     }
 
     /**
@@ -59,6 +77,11 @@ class CandidatoController extends Controller
             'email' => $data['email'],
             'cv' => $newFileName
         ]);
+        
+        // instancia de relación a reclutador de Vacnate
+        $reclutador = $vacante->reclutador;
+        // Enviar notificación al reclutador
+        $reclutador->notify( new NuevoCandidato($vacante->titulo, $vacante->id, $data['nombre']) );
 
         return back()->with('enviado', 'Tus datos han sido ENVIADOS, el reclutador se pondra en contacto contigo si eres seleccionado como prospecto.');
     }

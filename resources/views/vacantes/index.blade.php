@@ -18,6 +18,7 @@
           <thead class="bg-gray-100">
             <tr>
               <th class="table-title w-full">Titulo vacante</th>
+              <th class="table-title">Creada</th>
               <th class="table-title bg-gray-200">Estado</th>
               <th class="table-title">Candidatos</th>
               <th class="table-title">Acciones</th>
@@ -39,16 +40,22 @@
                     </div>
                   </div>
                 </td>
+                <td 
+                  class="border p-4 border-none whitespace-no-wrap text-center leading-5 font-semibold text-xs text-gray-500"
+                  title="{{ $item->created_at->format('l jS \\of F Y h:i:s A') }}"
+                >
+                  {{ $item->created_at->diffForHumans() }}
+                </td>
                 <td class="border p-4 border-none whitespace-no-wrap bg-gray-100 text-center">
                   <span class="inline-flex text-xs leading-5 font-semibold rounded-full px-2 {{ $item->activa ? 'bg-purple_grad-100 text-purple_grad-400' : 'bg-gray-200 text-gray-500' }}">
                     {{ $item->activa ? 'Activa' : 'Finalizada' }}
                   </span>
                 </td>
-                <td class="border p-4 border-none whitespace-no-wrap">
+                <td class="border p-4 border-none whitespace-no-wrap text-center">
                   <a 
-                    href="" 
-                    class="text-gray-500 hover:text-gray-600"
-                  >Candidatos</a>
+                    href="{{ route('candidatos.index', ['id' => $item->id]) }}" 
+                    class="text-gray-500 font-medium hover:underline"
+                  >{{ $item->candidatos->count() }}</a>
                 </td>
                 <td class="p-4 whitespace-no-wrap border-none text-xs font-medium">
                   <div class="flex items-center justify-center space-x-3">

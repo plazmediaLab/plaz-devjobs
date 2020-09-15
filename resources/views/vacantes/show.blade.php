@@ -22,7 +22,7 @@
           <time class="font-light">{{ $vacante->created_at->diffForHumans() }}</time>
         </p>
       </header>
-      <img class="object-cover w-full h-banner mb-3" src="/storage/vacantes/{{ $vacante->imagen }}" alt="Vacante banner">
+      <img class="banner object-cover w-full mb-3" src="/storage/vacantes/{{ $vacante->imagen }}" alt="Vacante banner">
       <p class="text-xl font-medium">Descripción: </p>
       <article class="descripcion">
         {!! $vacante->descripcion !!}
